@@ -43,7 +43,7 @@ def mostrar(tablero, q):
 if __name__ == '__main__':
     N = 5
     ejex, ejey, q, tablero = inicializar(N)
-    tablero[0][0] = 1 # Movimiento inicial
+    tablero[2][2] = 1 # Movimiento inicial
     mover(N*N, tablero,2,0,0,q, ejex, ejey)
     mostrar(tablero, q)
 
