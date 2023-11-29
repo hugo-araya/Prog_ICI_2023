@@ -1,5 +1,5 @@
 def lee_numero():
-    numero = input('Ingrese numero de 4 digitos: ')
+    numero = input('Ingrese numero de 3 digitos: ')
     return numero
 
 def may_men(nume_or):
@@ -19,7 +19,7 @@ def men_may(nume_or):
 def diferencia (nume_1, nume_2):
     dife = int(nume_1) - int(nume_2)
     dife = str(dife)
-    while len(dife) < 4:
+    while len(dife) < 3:
         dife = '0' + dife
     return dife
 

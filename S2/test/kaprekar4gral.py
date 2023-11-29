@@ -2,6 +2,12 @@ def lee_numero():
     numero = input('Ingrese numero de 4 digitos: ')
     return numero
 
+def comprueba(numero):
+    if numero[0] == numero[1] and numero[0] == numero[2] and numero[0] == numero[3]:
+        return False
+    else:
+        return True
+
 def may_men(nume_or):
     numero = []
     for digito in nume_or:
@@ -34,13 +40,24 @@ def ciclo_kaprekar(nume_or):
         nume_1_2 = diferencia(nume_1, nume_2)
         anterior = nume_calculado
         nume_calculado = nume_1_2
-    return nume_calculado, lista
+    return nume_calculado
 
-def mostrar_constante(constante, lista):
-    print(f'La constante de Kaprekar para numero de 4 digitos es: {constante}')
-    print('Lista: ', lista)
+def mostrar(estatus):
+    if estatus == True:
+        print('La constante es la misma')
+    else:
+        print('La constante NO es la misma')
+
+def genera_numeros(inicio, fin):
+    sta = True
+    for nume in range(inicio, fin):
+        nume_str = str(nume)
+        if comprueba(nume_str) == True:
+             constante = ciclo_kaprekar(nume_str)
+             if constante != '6174':
+                 sta = False
+    return sta
 
 if __name__ == '__main__':
-    nume_or = lee_numero()
-    constante, lista = ciclo_kaprekar(nume_or)
-    mostrar_constante(constante, lista)
+    estatus = genera_numeros(1000, 9999)
+    mostrar(estatus)

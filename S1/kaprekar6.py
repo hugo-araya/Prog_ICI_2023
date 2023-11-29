@@ -1,5 +1,5 @@
 def lee_numero():
-    numero = input('Ingrese numero de 4 digitos: ')
+    numero = input('Ingrese numero de 6 digitos: ')
     return numero
 
 def may_men(nume_or):
@@ -19,7 +19,7 @@ def men_may(nume_or):
 def diferencia (nume_1, nume_2):
     dife = int(nume_1) - int(nume_2)
     dife = str(dife)
-    while len(dife) < 4:
+    while len(dife) < 6:
         dife = '0' + dife
     return dife
 
@@ -28,7 +28,6 @@ def ciclo_kaprekar(nume_or):
     anterior = ''
     nume_calculado = nume_or
     while anterior != nume_calculado:
-        print(nume_calculado)
         ciclo.append(nume_calculado)
         nume_1 = may_men(nume_calculado)
         nume_2 = men_may(nume_calculado)
